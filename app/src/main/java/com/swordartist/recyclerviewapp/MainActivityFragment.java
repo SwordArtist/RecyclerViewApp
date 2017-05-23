@@ -86,7 +86,7 @@ public class MainActivityFragment extends Fragment {
                 "item3",
                 "item4"};
 
-        mAdapter = new MyAdapter(myDataset);
+        mAdapter = new MyAdapter(getContext() ,myDataset);
         mRecyclerView.setAdapter(mAdapter);
 
         return rootView;
