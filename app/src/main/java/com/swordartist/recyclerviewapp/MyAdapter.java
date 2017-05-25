@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,8 +47,20 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> implem
         CardView v = (CardView) LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.billing_overview_card, parent, false);
         // set the view's size, margins, paddings and layout parameters
+//        final LinearLayout billingDetailLayout = (LinearLayout) v.findViewById(R.id.billing_detail_layout);
         Button viewDetailButton = (Button) v.findViewById(R.id.view_detail_btn);
-        viewDetailButton.setOnClickListener(this);
+        viewDetailButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LinearLayout billingDetailLayout = (LinearLayout)((View)v.getParent().getParent()).findViewById(R.id.billing_detail_layout);
+                if (billingDetailLayout.getVisibility() == View.GONE) {
+                    billingDetailLayout.setVisibility(View.VISIBLE);
+                } else {
+                    billingDetailLayout.setVisibility(View.GONE);
+                }
+            }
+        });
+        
 //        ...
         ViewHolder vh = new ViewHolder(v);
         return vh;
