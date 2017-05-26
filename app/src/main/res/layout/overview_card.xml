@@ -52,7 +52,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/billing_detail_layout"
+            android:id="@+id/detail_linearlayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@android:color/darker_gray"
@@ -102,7 +102,7 @@
             android:orientation="horizontal"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/billing_detail_layout">
+            app:layout_constraintTop_toBottomOf="@+id/detail_linearlayout">
 
             <com.swordartist.recyclerviewapp.MyButton
                 android:id="@+id/view_detail_btn"
